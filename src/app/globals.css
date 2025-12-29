@@ -4,4 +4,194 @@
   --color-cyber-cyan: #22d3ee;
   --color-cyber-magenta: #ff3df2;
   --color-bg: #060712;
+  --font-sans: var(--font-anta);
+  --font-display: var(--font-turret-road);
+  --glitched-duration: 0.9s;
+  --glitched-long-duration: 3s;
+}
+
+.font-display {
+  font-family: var(--font-display), var(--font-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-bg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  min-height: 100dvh;
+  margin: 0;
+  background: transparent;
+  color: color-mix(in oklab, white 88%, var(--color-cyber-cyan));
+  font-family:
+    var(--font-sans),
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+  text-rendering: geometricPrecision;
+  position: relative;
+  isolation: isolate;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-cyber-magenta) 35%, transparent);
+}
+
+.glitched-text {
+  animation-name: text-glitched;
+  animation-duration: var(--glitched-long-duration);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  position: relative;
+}
+
+.glitched-text::before,
+.glitched-text::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 0.75;
+}
+
+.glitched-text::before {
+  color: color-mix(in oklab, var(--color-cyber-cyan) 40%, transparent);
+  transform: translate3d(1px, 0, 0);
+  animation: chroma-shift var(--glitched-duration) linear infinite;
+}
+
+.glitched-text::after {
+  color: color-mix(in oklab, var(--color-cyber-magenta) 40%, transparent);
+  transform: translate3d(-1px, 0, 0);
+  animation: chroma-shift calc(var(--glitched-duration) * 1.1) linear infinite reverse;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glitched-text::before,
+  .glitched-text::after {
+    animation: none;
+  }
+}
+
+@keyframes chroma-shift {
+  0%, 100% { transform: translate3d(1px, 0, 0); }
+  50% { transform: translate3d(2px, 0, 0); }
+}
+
+@keyframes text-glitched {
+  0% {
+    transform: skew(-20deg);
+    left: -4px;
+  }
+  10% {
+    transform: skew(-20deg);
+    left: -4px;
+  }
+  11% {
+    transform: skew(0deg);
+    left: 2px;
+  }
+  50% {
+    transform: skew(0deg);
+  }
+  51% {
+    transform: skew(10deg);
+  }
+  59% {
+    transform: skew(10deg);
+  }
+  60% {
+    transform: skew(0deg);
+  }
+  100% {
+    transform: skew(0deg);
+  }
+}
+
+.cyber-tile {
+  --tile-padding: 4px;
+  --tile-edges: 40px;
+  --hud-grid: 24px;
+
+  --og-clip-path: polygon(
+    0 0,
+    0 calc(100% - var(--tile-edges)),
+    var(--tile-edges) 100%,
+    100% 100%,
+    100% var(--tile-edges),
+    calc(100% - var(--tile-edges)) 0
+  );
+  width: fit-content;
+  min-height: 60px;
+  clip-path: var(--og-clip-path);
+  padding: calc(var(--tile-padding) + calc(var(--tile-edges) / 2));
+  border: 1px solid
+    color-mix(in oklab, var(--color-cyber-cyan) 30%, transparent);
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--color-cyber-magenta) 18%, transparent)
+      inset,
+    0 0 24px color-mix(in oklab, var(--color-cyber-cyan) 16%, transparent);
+
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.04) 1px, transparent 1px),
+    linear-gradient(
+      135deg,
+      color-mix(in oklab, var(--color-cyber-cyan) 16%, transparent),
+      color-mix(in oklab, var(--color-cyber-magenta) 16%, transparent)
+    ),
+    linear-gradient(var(--color-bg), var(--color-bg));
+
+  background-size:
+    var(--hud-grid) var(--hud-grid),
+    var(--hud-grid) var(--hud-grid),
+    auto,
+    auto;
+
+  background-position: center;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(
+      circle at 1px 1px,
+      color-mix(in oklab, var(--color-cyber-cyan) 26%, transparent) 1px,
+      transparent 0
+    )
+    0 0 / 14px 14px;
+  mask-image: radial-gradient(circle at 50% 20%, black 0%, transparent 70%);
+  opacity: 0.32;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(
+      circle at 1px 1px,
+      color-mix(in oklab, var(--color-cyber-magenta) 22%, transparent) 1px,
+      transparent 0
+    )
+    0 0 / 16px 16px;
+  mask-image: radial-gradient(circle at 50% 20%, black 0%, transparent 70%);
+  opacity: 0.18;
+  transform: translate3d(6px, 4px, 0);
+  filter: blur(0.6px);
 }
