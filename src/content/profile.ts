@@ -3,7 +3,7 @@ export type SocialLabel = "GitHub" | "LinkedIn" | "Email" | "Blog" | "CV"
 export type Availability = "Open to work" | "Freelance" | "Not looking"
 export type SkillLevel = "Basic" | "Proficient" | "Advanced"
 export type SkillGroupLabel = "Frontend" | "Backend" | "Tools" | "Platforms" | "Testing"
-export type ShippingStatus = "Active" | "Paused" | "Shipped" | "Completed"
+export type ShippingStatus = "Active" | "Paused" | "Shipped"
 
 export type Social = {
   label: SocialLabel
@@ -77,8 +77,7 @@ export const profile: Profile = {
   role: "Full-stack Engineer",
   tagline: "Building and modernising web applications where correctness, scale, and long-term maintainability matter.",
   bio: [
-    "I am a full-stack engineer with experience building, maintaining, and modernising production web applications used by real users at scale.",
-    "My work spans legacy Java and Scala backends through to modern React and TypeScript frontends, with additional experience building Node.js services through independent projects.",
+    "I am a full-stack engineer with experience building, maintaining, and modernising production web applications used by real users at scale. My work spans legacy Java and Scala backends through to modern React and TypeScript frontends, with additional experience building Node.js services through independent projects.",
     "I have contributed to incremental migrations, improved developer workflows, and delivered features while working within existing systems and constraints.",
     "I care deeply about clean, maintainable code, pragmatic architecture, and sustainable development practices. Alongside hands-on engineering, I have contributed as a Scrum Master, led code quality initiatives, and helped teams improve how they plan, review, and ship work.",
     "Outside of my day-to-day role, I build personal projects and infrastructure to explore data ingestion, automation, and system design, with a focus on understanding tools deeply rather than chasing trends.",
@@ -193,16 +192,23 @@ export const profile: Profile = {
     {
       name: "Key Level Insights",
       description:
-        "A data-driven dashboard analysing Mythic+ dungeon performance using data primarily from Blizzard's API.",
+        "A data-driven analytics platform that ingests large volumes of Mythic+ dungeon data and transforms it into long-term performance trends across specs and key levels.",
       tech: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "GraphQL", "Docker"],
       link: "https://keylevelinsights.com",
       source: "https://github.com/harryc6/key-level-insights",
       featured: true,
       status: "Active",
-      role: "Solo",
+      role: "Solo developer",
       year: 2025,
-      highlights: ["Batch ingestion and transformation pipeline", "UI dashboards for spec and key-level trends"],
-      metrics: ["Handles large batch datasets", "Designed for trend analysis over time"],
+      highlights: [
+        "Designed and implemented a batch ingestion and transformation pipeline to collect, normalise, and store large Mythic+ datasets",
+        "Integrated OAuth-based access to third-party APIs and handled rate limits, retries, and token lifecycle management",
+        "Built interactive React dashboards for filtering and visualising performance trends across time",
+      ],
+      metrics: [
+        "Handles tens to hundreds of thousands of records per ingestion run",
+        "Processes large batch datasets on a scheduled basis",
+      ],
       icon: { src: "/images/kli-icon.webp", alt: "Key Level Insights icon" },
     },
     {
@@ -230,18 +236,22 @@ export const profile: Profile = {
     {
       name: "Proxmox MCP Integration",
       description:
-        "An MCP server that integrates with my Proxmox environment to query infrastructure state and support automation workflows.",
+        "An MCP server that exposes live Proxmox infrastructure state in a safe, structured way to support automation, operational insight, and AI-assisted documentation workflows.",
       tech: ["JavaScript", "Node.js"],
       source: "https://github.com/Harryc6/ProxmoxMCP",
       featured: true,
-      status: "Completed",
+      status: "Shipped",
       role: "Solo",
       year: 2025,
       highlights: [
-        "Designed to expose homelab infrastructure data safely to AI tooling",
-        "Built to support documentation automation and operational workflows",
+        "Implemented a read-only MCP server to query Proxmox cluster state without exposing credentials or shell access",
+        "Designed to support repeatable operational workflows rather than ad-hoc scripts",
+        "Used as a data source for automated documentation and runbook generation",
       ],
-      metrics: ["Optimised for repeatable automation tasks"],
+      metrics: [
+        "Provides a single source of truth for homelab infrastructure state",
+        "Reduces time to answer operational questions from minutes to seconds",
+      ],
     },
     {
       name: "Obsidian + AI Documentation Automation",

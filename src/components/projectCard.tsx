@@ -12,7 +12,7 @@ const ProjectCard: FC<Project> = (project) => {
       }
     >
       <Icon icon={project.icon} />
-      <Header title={project.name} year={project.year} description={project.description} />
+      <Header title={project.name} description={project.description} />
       <Tech tech={project.tech} />
       <Highlights highlights={project.highlights} />
       <Metrics metrics={project.metrics} />
@@ -24,7 +24,7 @@ const ProjectCard: FC<Project> = (project) => {
 const Icon: FC<{ icon?: ProjectIcon }> = ({ icon }) => {
   return (
     icon && (
-      <div className="absolute right-4 top-4 h-9 w-9 rounded-full border border-cyber-cyan/30 bg-black/60 backdrop-blur-sm">
+      <div className="absolute right-3 top-3 h-9 w-9 rounded-full border border-cyber-cyan/30 bg-black/60 backdrop-blur-sm">
         <Image
           src={icon.src}
           alt={icon.alt}
@@ -37,13 +37,10 @@ const Icon: FC<{ icon?: ProjectIcon }> = ({ icon }) => {
   )
 }
 
-const Header: FC<{ title: string; year?: number; description: string }> = ({ title, year, description }) => {
+const Header: FC<{ title: string; description: string }> = ({ title, description }) => {
   return (
     <div>
-      <h3 className={"text-2xl font-semibold text-white"}>
-        {title}
-        {year && ` (${year})`}
-      </h3>
+      <h3 className={"text-2xl font-semibold text-white"}>{title}</h3>
       <p className={"text-white/75 text-sm"}>{description}</p>
     </div>
   )
@@ -75,7 +72,7 @@ const Highlights: FC<{ highlights?: string[] }> = ({ highlights }) => {
       <ul className={"space-y-1 text-sm text-white/70"}>
         {highlights.map((highlight) => (
           <li key={highlight} className={"flex gap-2"}>
-            <span className={"mt-1 h-1.5 w-1.5 rounded-full bg-cyber-cyan/60"} />
+            <span className={"mt-1.5 h-1.5 w-1.5 rounded-full bg-cyber-cyan/60 shrink-0"} />
             <span>{highlight}</span>
           </li>
         ))}
@@ -90,7 +87,7 @@ const Metrics: FC<{ metrics?: string[] }> = ({ metrics }) => {
       <ul className={"flex flex-wrap gap-2 text-white/70 text-xs"}>
         {metrics.map((metric) => (
           <li
-            className={"rounded-full border border-cyber-magenta/50 bg-black/40 px-2.5 py-1 text-white/80"}
+            className={"rounded-lg border border-cyber-magenta/50 bg-black/40 px-2.5 py-1 text-white/80"}
             key={metric}
           >
             {metric}

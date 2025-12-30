@@ -9,7 +9,7 @@ const ContactSection: FC = () => {
         <a href="mailto:harrycarr64@hotmail.com" className="text-cyber-cyan underline">
           harrycarr64@hotmail.com
         </a>
-        . I’m always happy to connect.
+        . I’m always happy to chat.
       </p>
     </section>
   )
