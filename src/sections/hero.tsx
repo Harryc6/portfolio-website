@@ -3,7 +3,7 @@ import { profile } from "@/content/profile"
 
 const HeroSection: FC = () => {
   return (
-    <section className={"scroll-mt-22 sm:scroll-mt-18 mx-auto max-w-5xl"}>
+    <section className={"scroll-mt-22 sm:scroll-mt-18 mx-auto mt-16 sm:mt-24 max-w-5xl"}>
       <p className={"text-sm tracking-[0.2em] uppercase glitched-text text-cyber-cyan/80"} data-text={profile.role}>
         {profile.role}
       </p>

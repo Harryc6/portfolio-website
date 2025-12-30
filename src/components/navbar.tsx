@@ -5,6 +5,15 @@ const Navbar: FC = () => {
     <header className={"sticky top-0 bg-black/40 backdrop-blur-xs z-10"}>
       <div className={"mx-auto max-w-5xl px-6 pt-10 sm:pt-6"}>
         <nav className={"flex justify-end pb-2 pr-2"} aria-label={"Primary Navigation"}>
+          <a
+            href={"#main"}
+            className={
+              "focus:mr-auto sr-only focus:not-sr-only text-xl sm:text-lg text-white/80 hover:text-cyber-cyan transition-colors rounded-sm " +
+              "focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyber-cyan"
+            }
+          >
+            Skip to content
+          </a>
           <LinkItem name={"Projects"} href={"#projects"} />
           <LinkItem name={"About"} href={"#about"} />
           <LinkItem name={"Contact"} href={"#contact"} />

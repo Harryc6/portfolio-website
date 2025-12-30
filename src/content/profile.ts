@@ -193,7 +193,7 @@ export const profile: Profile = {
       name: "Key Level Insights",
       description:
         "A data-driven analytics platform that ingests large volumes of Mythic+ dungeon data and transforms it into long-term performance trends across specs and key levels.",
-      tech: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "GraphQL", "Docker"],
+      tech: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "GraphQL"],
       link: "https://keylevelinsights.com",
       source: "https://github.com/harryc6/key-level-insights",
       featured: true,
@@ -206,7 +206,7 @@ export const profile: Profile = {
         "Built interactive React dashboards for filtering and visualising performance trends across time",
       ],
       metrics: [
-        "Handles tens to hundreds of thousands of records per ingestion run",
+        "Handles tens to hundreds of thousands of records per ingestion",
         "Processes large batch datasets on a scheduled basis",
       ],
       icon: { src: "/images/kli-icon.webp", alt: "Key Level Insights icon" },
@@ -214,7 +214,7 @@ export const profile: Profile = {
     {
       name: "Redbot",
       description:
-        "A Discord bot built in Java to automate and support the running of a Cyberpunk Red westmarch server, managing game workflows, persistence, and community coordination.",
+        "A Discord bot built in Java to automate and support the running of a CPR westmarch server, managing game workflows, persistence, and community coordination.",
       tech: ["Java", "MySQL", "Discord API"],
       source: "https://github.com/Harryc6/redbot",
       featured: true,
@@ -223,7 +223,7 @@ export const profile: Profile = {
       year: 2021,
       highlights: [
         "Designed and implemented a stateful Java Discord bot with MySQL-backed persistence",
-        "Automated core Westmarch gameplay workflows for Night City Overdrive, reducing manual admin effort",
+        "Automated core character management, reducing manual admin overhead",
         "Led a small team of volunteer contributors, coordinating features, reviews, and releases",
         "Structured the codebase to accommodate evolving game rules and long-running server use",
       ],

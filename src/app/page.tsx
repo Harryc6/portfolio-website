@@ -9,7 +9,7 @@ const Home: FC = () => {
   return (
     <>
       <Navbar />
-      <main className={"px-6 py-16 sm:py-24"}>
+      <main id={"main"} className={"px-6 py-16 sm:py-24"}>
         <HeroSection />
         <ProjectSection />
         <AboutSection />

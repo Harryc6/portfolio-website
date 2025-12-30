@@ -69,7 +69,7 @@ const TechTag: FC<{ name: string }> = ({ name }) => {
 const Highlights: FC<{ highlights?: string[] }> = ({ highlights }) => {
   return (
     highlights && (
-      <ul className={"space-y-1 text-sm text-white/70"}>
+      <ul className={"space-y-1 text-xs text-white/70"}>
         {highlights.map((highlight) => (
           <li key={highlight} className={"flex gap-2"}>
             <span className={"mt-1.5 h-1.5 w-1.5 rounded-full bg-cyber-cyan/60 shrink-0"} />
@@ -84,10 +84,10 @@ const Highlights: FC<{ highlights?: string[] }> = ({ highlights }) => {
 const Metrics: FC<{ metrics?: string[] }> = ({ metrics }) => {
   return (
     metrics && (
-      <ul className={"flex flex-wrap gap-2 text-white/70 text-xs"}>
+      <ul className={"flex flex-wrap gap-2 text-xs"}>
         {metrics.map((metric) => (
           <li
-            className={"rounded-lg border border-cyber-magenta/50 bg-black/40 px-2.5 py-1 text-white/80"}
+            className={"rounded-lg border border-cyber-magenta/50 bg-black/40 px-2.5 py-1 text-white/90"}
             key={metric}
           >
             {metric}
