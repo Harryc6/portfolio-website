@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Anta, Turret_Road } from "next/font/google"
 
 import "./globals.css"
+import { profile } from "@/content/profile"
 
 const anta = Anta({
   subsets: ["latin"],
@@ -18,9 +19,8 @@ const turretRoad = Turret_Road({
 })
 
 export const metadata: Metadata = {
-  title: "Harry Carr",
-  description:
-    "Welcome to the portfolio of Harry Carr, a software developer specializing in full-stack applications. Explore my projects, skills, and experience in the tech industry.",
+  title: profile.meta.siteTitle,
+  description: profile.meta.description,
 }
 
 export default function RootLayout({
