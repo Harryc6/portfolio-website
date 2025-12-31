@@ -205,7 +205,7 @@ export const profile: Profile = {
       // link: "https://keylevelinsights.com", // Coming soon
       source: "https://github.com/Harryc6/KeyLevelInsights",
       featured: true,
-      status: "Active",
+      status: "Paused",
       role: "Solo developer",
       year: 2025,
       highlights: [
