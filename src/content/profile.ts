@@ -203,7 +203,7 @@ export const profile: Profile = {
         "A data-driven analytics platform that ingests large volumes of Mythic+ dungeon data and transforms it into long-term performance trends across specs and key levels.",
       tech: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "GraphQL"],
       // link: "https://keylevelinsights.com", // Coming soon
-      source: "https://github.com/harryc6/key-level-insights",
+      source: "https://github.com/Harryc6/KeyLevelInsights",
       featured: true,
       status: "Active",
       role: "Solo developer",
