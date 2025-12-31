@@ -95,7 +95,7 @@ export const profile: Profile = {
   meta: {
     siteTitle: "Harry Carr | Full-stack Engineer",
     description:
-      "Full-stack engineer specialising in Java/Scala backends and React/TypeScript frontends. Focused on clean UX, maintainability, and modernising legacy systems.",
+      "Full-stack engineer specialising in Java/Scala/Node.js backends and React/TypeScript frontends. Focused on clean UX, maintainability, and modernising legacy systems.",
     siteUrl: "https://harrycarr.com",
     ogImageUrl: "https://harrycarr.com/images/og.png",
   },
