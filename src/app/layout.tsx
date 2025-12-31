@@ -3,6 +3,7 @@ import { Anta, Turret_Road } from "next/font/google"
 
 import "./globals.css"
 import { profile } from "@/content/profile"
+import { Analytics } from "@vercel/analytics/next"
 
 const anta = Anta({
   subsets: ["latin"],
@@ -56,7 +57,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${anta.variable} ${turretRoad.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }
