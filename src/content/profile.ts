@@ -4,12 +4,13 @@ export type Availability = "Open to work" | "Freelance" | "Not looking"
 export type SkillLevel = "Basic" | "Proficient" | "Advanced"
 export type SkillGroupLabel = "Frontend" | "Backend" | "Tools" | "Platforms" | "Testing"
 export type ShippingStatus = "Active" | "Paused" | "Shipped"
+export type SocialIcon = "github" | "linkedin" | "email"
 
 export type Social = {
   label: SocialLabel
   href: string
   handle?: string
-  icon?: string
+  icon: SocialIcon
 }
 
 export type Skill = {
@@ -57,6 +58,7 @@ export type Project = {
 export type Profile = {
   name: string
   role: string
+  subheading: string
   tagline: string
   bio: string[]
   email: string
@@ -75,7 +77,9 @@ export type Profile = {
 export const profile: Profile = {
   name: "Harry Carr",
   role: "Full-stack Engineer",
-  tagline: "Building and modernising web applications where correctness, scale, and long-term maintainability matter.",
+  subheading:
+    "Building and modernising web applications where correctness, scale, and long-term maintainability matter.",
+  tagline: "7+ years experience · Production systems · Real users",
   bio: [
     "I am a full-stack engineer with experience building, maintaining, and modernising production web applications used by real users at scale. My work spans legacy Java and Scala backends through to modern React and TypeScript frontends, with additional experience building Node.js services through independent projects.",
     "I have contributed to incremental migrations, improved developer workflows, and delivered features while working within existing systems and constraints.",
@@ -93,9 +97,9 @@ export const profile: Profile = {
   },
 
   socials: [
-    { label: "GitHub", href: "https://github.com/Harryc6" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/harry-carr-53a943122/" },
-    { label: "Email", href: "mailto:harrycarr64@hotmail.com" },
+    { label: "GitHub", href: "https://github.com/Harryc6", icon: "github" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/harry-carr-53a943122/", icon: "linkedin" },
+    { label: "Email", href: "mailto:harrycarr64@hotmail.com", icon: "email" },
   ],
   skills: [
     {
@@ -194,7 +198,7 @@ export const profile: Profile = {
       description:
         "A data-driven analytics platform that ingests large volumes of Mythic+ dungeon data and transforms it into long-term performance trends across specs and key levels.",
       tech: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "GraphQL"],
-      link: "https://keylevelinsights.com",
+      // link: "https://keylevelinsights.com", // Coming soon
       source: "https://github.com/harryc6/key-level-insights",
       featured: true,
       status: "Active",

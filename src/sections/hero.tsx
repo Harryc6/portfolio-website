@@ -10,7 +10,8 @@ const HeroSection: FC = () => {
       <div className={"cyber-tile"}>
         <h1 className={"text-5xl sm:text-7xl display-heading text-white"}>{profile.name}</h1>
       </div>
-      <p className="mt-2 max-w-2xl text-lg sm:text-xl leading-relaxed text-white/80">{profile.tagline}</p>
+      <p className="mt-2 max-w-2xl text-lg sm:text-xl leading-relaxed text-white/80">{profile.subheading}</p>
+      <p className={"text-xs text-white/60"}>{profile.tagline}</p>
     </section>
   )
 }
