@@ -67,6 +67,8 @@ export type Profile = {
   meta: {
     siteTitle: string
     description: string
+    siteUrl: string
+    ogImageUrl: string
   }
   socials: Social[]
   skills: SkillGroup[]
@@ -94,6 +96,8 @@ export const profile: Profile = {
     siteTitle: "Harry Carr | Full-stack Engineer",
     description:
       "Full-stack engineer specialising in Java/Scala backends and React/TypeScript frontends. Focused on clean UX, maintainability, and modernising legacy systems.",
+    siteUrl: "https://harrycarr.com",
+    ogImageUrl: "https://harrycarr.com/images/og.png",
   },
 
   socials: [
